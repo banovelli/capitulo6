@@ -17,7 +17,7 @@ namespace DinnerParty
                 numberOfPeople = value;
                 calculateCostOfDecorations(fancyDecorations);
                 CalculateCakeSize();
-                this.cakeWriting = cakeWriting;
+                this.CakeWriting = cakeWriting;
             } 
         }
         private string cakeWriting = "";
@@ -59,7 +59,7 @@ namespace DinnerParty
             }
         }
 
-        private void calculateCostOfDecorations(bool fancy)
+        public void calculateCostOfDecorations(bool fancy)
         {
             fancyDecorations = fancy;
             if (fancy)
@@ -68,7 +68,7 @@ namespace DinnerParty
                 CosOfDecorations = NumberOfPeople * 7.50M + 30M;
         }
 
-        public decimal calculateCost()
+        public decimal CalculateCost()
         {
             decimal totalCost = CosOfDecorations +
                 (costOfFoodPerPerson * NumberOfPeople);
