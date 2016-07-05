@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.shifts = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.assignJob = new System.Windows.Forms.Button();
             this.workerBeeJobs = new System.Windows.Forms.ComboBox();
-            this.swifts = new System.Windows.Forms.NumericUpDown();
-            this.nextSwift = new System.Windows.Forms.Button();
+            this.nextShift = new System.Windows.Forms.Button();
             this.relatorio = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.swifts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shifts)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.swifts);
+            this.groupBox1.Controls.Add(this.shifts);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.assignJob);
@@ -53,6 +53,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Atribuições de Tarefas de Operárias";
+            // 
+            // shifts
+            // 
+            this.shifts.Location = new System.Drawing.Point(237, 36);
+            this.shifts.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.shifts.Name = "shifts";
+            this.shifts.Size = new System.Drawing.Size(71, 20);
+            this.shifts.TabIndex = 4;
+            this.shifts.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label2
             // 
@@ -81,47 +98,33 @@
             this.assignJob.TabIndex = 1;
             this.assignJob.Text = "Atribuir essa tarefa a uma abelha";
             this.assignJob.UseVisualStyleBackColor = true;
+            this.assignJob.Click += new System.EventHandler(this.assignJob_Click);
             // 
             // workerBeeJobs
             // 
+            this.workerBeeJobs.DisplayMember = "2";
             this.workerBeeJobs.FormattingEnabled = true;
             this.workerBeeJobs.Items.AddRange(new object[] {
             "Coletar néctar",
             "Produção de mel",
-            "Cuida de ovos",
+            "Cuidar dos ovos",
             "Ensinar as abelhas bebês",
             "Manutenção da colméia",
-            "Patrula"});
+            "Patrulha"});
             this.workerBeeJobs.Location = new System.Drawing.Point(6, 36);
             this.workerBeeJobs.Name = "workerBeeJobs";
             this.workerBeeJobs.Size = new System.Drawing.Size(195, 21);
-            this.workerBeeJobs.TabIndex = 0;
+            this.workerBeeJobs.TabIndex = 2;
             // 
-            // swifts
+            // nextShift
             // 
-            this.swifts.Location = new System.Drawing.Point(237, 36);
-            this.swifts.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.swifts.Name = "swifts";
-            this.swifts.Size = new System.Drawing.Size(71, 20);
-            this.swifts.TabIndex = 4;
-            this.swifts.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // nextSwift
-            // 
-            this.nextSwift.Location = new System.Drawing.Point(332, 32);
-            this.nextSwift.Name = "nextSwift";
-            this.nextSwift.Size = new System.Drawing.Size(75, 67);
-            this.nextSwift.TabIndex = 1;
-            this.nextSwift.Text = "Próximo turno";
-            this.nextSwift.UseVisualStyleBackColor = true;
+            this.nextShift.Location = new System.Drawing.Point(332, 32);
+            this.nextShift.Name = "nextShift";
+            this.nextShift.Size = new System.Drawing.Size(75, 67);
+            this.nextShift.TabIndex = 1;
+            this.nextShift.Text = "Próximo turno";
+            this.nextShift.UseVisualStyleBackColor = true;
+            this.nextShift.Click += new System.EventHandler(this.nextShift_Click);
             // 
             // relatorio
             // 
@@ -137,13 +140,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(417, 276);
             this.Controls.Add(this.relatorio);
-            this.Controls.Add(this.nextSwift);
+            this.Controls.Add(this.nextShift);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.swifts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shifts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,8 +160,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button assignJob;
         private System.Windows.Forms.ComboBox workerBeeJobs;
-        private System.Windows.Forms.NumericUpDown swifts;
-        private System.Windows.Forms.Button nextSwift;
+        private System.Windows.Forms.NumericUpDown shifts;
+        private System.Windows.Forms.Button nextShift;
         private System.Windows.Forms.TextBox relatorio;
     }
 }
