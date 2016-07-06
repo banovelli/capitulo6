@@ -17,11 +17,11 @@ namespace Bee
             InitializeComponent();
 
             Worker[] workers = new Worker[4];
-            workers[0] = new Worker(new string[] { "Coletar néctar", "Produção de mel" });
-            workers[1] = new Worker(new string[] { "Cuidar dos ovos", "Ensinar as abelhas bebês" });
-            workers[2] = new Worker(new string[] { "Manutenção da colméia", "Patrulha" });
+            workers[0] = new Worker(new string[] { "Coletar néctar", "Produção de mel" }, 175);
+            workers[1] = new Worker(new string[] { "Cuidar dos ovos", "Ensinar as abelhas bebês" }, 114);
+            workers[2] = new Worker(new string[] { "Manutenção da colméia", "Patrulha" }, 144);
             workers[3] = new Worker(new string[] { "Coletar néctar", "Produção de mel",
-                         "Cuidar dos ovos", "Ensinar as abelhas bebês", "Manutenção da colméia", "Patrulha" });
+                         "Cuidar dos ovos", "Ensinar as abelhas bebês", "Manutenção da colméia", "Patrulha" }, 155);
             queen = new Queen(workers);
         }
 

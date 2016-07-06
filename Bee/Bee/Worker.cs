@@ -7,9 +7,10 @@ using System.Windows.Forms;
 
 namespace Bee
 {
-    public class Worker
+    public class Worker : Bee
     {
-        public Worker(string[] jobsICanDo)
+        public Worker(string[] jobsICanDo, int weight)
+            : base(weight)
         {
             this.jobsICanDo = jobsICanDo;
         }
@@ -24,7 +25,7 @@ namespace Bee
         private int shiftsToWork;
         private int shiftsWorked;
 
-        public int ShiftsLeft
+        public override int ShiftsLeft
         {
             get {return shiftsToWork - shiftsWorked;}
         }
